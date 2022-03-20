@@ -1,0 +1,55 @@
+<% layout('layout/boiler')  %> 
+<!-- <div class="row">
+    <h1 class="text-center">all campgrounds</h1>
+    <div class="col-6 offset-3">
+        
+        <form action="/campground/<%=data.id%>?_method=PUT " method="post">
+            <label   class="form-label" for="title">title</label>
+            <input  class="form-control" type="text" id="title" name="title" value="<%=data.title  %> "><br>
+            <label  class="form-label" for="price"></label>
+            <input  class="form-control" type="text" id="price"name="price" value="<%=data.price  %> "><br>
+           <button class="btn btn-primary mt-lg-2">submit</button>
+        </form>
+    </div>
+
+</div> -->
+<div class="row">
+    <h1 class="text-center">edit campgrounds</h1>
+    <div class="col-6 offset-3">
+        <h1> </h1>
+        <form action="/campground/<%=data.id%>?_method=PUT " method="post" novalidate class="val">
+            <div class="mb3">
+                <label class="form-label" for="title">title</label><br>
+                <input class="form-control"type="text" id="title" name="title" value="<%= data.title  %> " required>
+                <div class="valid-feedback">
+                    looks good!
+                </div>
+            </div>
+            <label class="form-label  mt-3" for="price">price</label><br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input class="form-control" type="text" id="price" name="price" placeholder="0.0" value="<%= data.price  %> "required>
+              </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="description">description</label><br>
+                <textarea class="form-control" type="text" id="description" name="description"required ><%= data.description  %> </textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image url</label><br>
+                <input class="form-control" type="text" id="image" name="image" value="<%= data.image  %> "required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">location</label><br>
+                <input class="form-control" type="text" id="location" name="location" value="<%= data.location  %> " required >
+            </div>
+            <button class="btn btn-info mt-lg-2 mb-3" >Update Campground</button>
+        </form>
+        <a class=" mb-3" href="/campground">Back to campground</a>
+    </div>
+
+</div>
+
+
+
+   

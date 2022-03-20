@@ -1,0 +1,9 @@
+
+    <% layout('/boiler') %> 
+    <%= data.name %><br>
+    <%= data.lastname  %><br>
+    <%= data.email  %>   <br>
+    <a href="/home">home</a><br>
+    <form action="/home/<%=data.id%>?_method=delete " method="post">
+    <button>delete</button>
+    </form>

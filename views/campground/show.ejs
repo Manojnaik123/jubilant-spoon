@@ -1,0 +1,60 @@
+<% layout('layout/boiler')  %> 
+
+    <!-- <h1>campground show</h1>
+    <h2><%= data.title  %> </h2>
+    <img src="<%=data.image  %> " width="500px" height="400px">
+    <h2><%= data.price %> </h2>
+    <h2><%= data.location  %> </h2>
+    <h2><%= data.description  %> </h2>
+     <a class="btn btn-secondary mt-3" href="/campground/<%=data.id%>/edit">edit</a><br>
+     <a class="btn btn-secondary mt-3" href="/campground">backto campgrounds</a><br>
+   <form action="/campground/<%=data.id%>?_method=DELETE " method="post">
+<button class="btn btn-danger mt-3">delete</button></form> -->
+ <div class="card mb-3 col-6" style="width: 500px">
+    <img src="<%= data.image  %> " class="card-img-top" >
+    <div class="card-body">
+      <h5 class="card-title"><%= data.title  %> </h5>
+      <p class="card-text"><%= data.description  %> </p>
+    </div>
+   
+    <div class="card-body">
+        <a class="btn btn-secondary mt-3" href="/campground/<%=data.id%>/edit">edit</a><br>
+        <a class="btn btn-secondary mt-3" href="/campground">backto campgrounds</a><br>
+      <form action="/campground/<%=data.id%>?_method=DELETE " method="post">
+   <button class="btn btn-danger mt-3">delete</button></form>
+   
+    </div>
+    <div class="col-6">
+      <h3>leave a review</h3>
+      <form action="/campground/<%=data._id%>/review" method="post" class="mb-3 val" >
+        <div class="mb-3">
+          <label for="" class="form-label">rating</label>
+         <input class="form-range"  name="rating" type="range" min="1" max="5" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="">review</label>
+          <input class="form-control" name="body" type="textarea" width="200px" height="150px" required>
+        </div>
+        <button class="btn btn-success">submit</button>
+      </form>
+      
+      <% for(let c of data.review){  %> 
+        <div class="card"></div>
+            <div class="mb-3 card-body">
+  
+                 <span>Rating:<%= c.rating  %> </span>
+                <p>Review:<%= c.body  %> </p>
+            </div>
+            <form action="/campground/<%=data._id%>/review/<%=c._id%>?_method=DELETE  " method="post">
+              <button class="btn btn-danger">delete</button>
+            </form>
+         </div>
+      <% }  %> 
+    
+     </div>
+  </div>
+  
+ 
+
+   
+

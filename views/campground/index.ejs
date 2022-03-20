@@ -1,0 +1,23 @@
+<%layout('layout/boiler')  %> 
+    <h1>all campgrounds</h1>
+    <ul>
+        <% for(let d of data){ %> 
+           <div class="card mb-3">
+               <div class="row">
+                   <div class="col-md-4">
+                       <img class="img-fluid"src="<%=d.image  %> "  >
+                   </div>
+                   <div class="col-md-8">
+                       <div class="card-body">
+                           <h5 class="card-title"><%=d.title  %> </h5>
+                           <p class="card-text"><%= d.description  %> </p>
+                           <p class="card-text">
+                               <small class="text-muted"><%=d.location  %> </small>
+                           </p>
+                           <a class="btn btn-primary"href="/campground/<%=d._id  %> ">view <%=d.title  %> </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            <% } %> 
+    </ul>
